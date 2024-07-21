@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <input class="js-input" placeholder="Type Something" onkeyup="
+      something(event)">
+      <p class="result"></p>
+      <script>
+       const inputElement = document.querySelector('.js-input');
+        function something(event){
+          document.querySelector('.result').innerHTML = inputElement.value;
+        }
+      </script>
+
+  </body>
+</html>

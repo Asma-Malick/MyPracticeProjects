@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Guess the Result!</h1>
+    <button onclick="
+    
+    userChoice('heads');
+    
+    
+    ">Head</button>
+    <button  class="js-tail" onclick="
+    
+      
+      userChoice('tails');
+      ">Tails</button>
+      
+      <button onclick="
+      score.win=0;
+      score.lose=0;
+      localStorage.removeItem('score');
+      ">Reset Score</button>
+
+
+    </body>
+    <script>
+      const score=JSON.parse(localStorage.getItem('score'))
+       || {
+        win: 0,
+        lose:0
+      };
+     
+     
+
+      let randomNumber = Math.random();
+
+      function userChoice(choice){
+        computerChoice();
+        if(result === choice){
+          score.win++;
+          alert(`You win. You pressed ${choice} and the computer chose ${result}
+          Win: ${score.win}, Loss: ${score.lose}`)
+        }else{
+          score.lose++;
+          alert(`You lose. You pressed ${choice} and the computer chose ${result}
+          Win: ${score.win}, Loss: ${score.lose}`)
+        }
+        localStorage.setItem('score',JSON.stringify(score));
+        
+        
+      }
+      function computerChoice(){
+        if(randomNumber<0.5){
+          result='heads';
+        }else{
+          result='tails';
+        }
+      
+      }
+      localStorage.setItem('score',JSON.stringify(score));
+      
+    </script>
+    </html>

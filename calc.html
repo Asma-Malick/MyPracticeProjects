@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Calculator</title>
+    <style>
+      body{
+        background-color: black;
+        color: white;
+        font-family: Arial;
+
+      }
+      .calc{
+        font-size: 45px;
+        margin-bottom: 0px;
+      }
+      .calcu{
+        color: white;
+        height:70px;
+        width: 70px;
+        border-radius: 35px;
+        
+        padding: 15px;
+        font-size: 30px;
+        background-color: rgb(51, 51, 51);;
+        border: none;
+        margin-right: 10px;
+        
+      }
+      .calcui{
+        color: white;
+        height:70px;
+        width: 70px;
+        border-radius: 35px;
+        
+        
+        font-size: 20px;
+        background-color: rgb(51, 51, 51);;
+        border: none;
+        margin-right: 10px;
+
+      }
+      .calci{
+        color: white;
+        height:70px;
+        width: 70px;
+        border-radius: 35px;
+        
+        padding: 15px;
+        font-size: 30px;
+        background-color: rgb(254, 160, 10);;
+        border: none;
+        margin-right: 10px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <p class="calc"></p>
+    <p>
+    <button class="calcu" onclick="
+    calc('1');
+      ">1</button>
+    <button class="calcu" onclick="
+    calc('2');
+      ">2</button>
+    <button class="calcu" onclick="
+    calc('3');
+    ">3</button>
+    <button class="calci" onclick="
+    calc('+');
+      ">+</button>
+    </p>
+
+    <p>
+      <button class="calcu" onclick="
+      calc('4');
+        ">4</button>
+      <button class="calcu" onclick="
+      calc('5');
+        ">5</button>
+      <button class="calcu" onclick="
+      calc('6');
+      ">6</button>
+      <button class="calci" onclick="
+      calc('-');
+        ">-</button>
+      </p>
+
+      <p>
+        <button class="calcu" onclick="
+        calc('7');
+          ">7</button>
+        <button class="calcu" onclick="
+        calc('8');
+          ">8</button>
+        <button class="calcu" onclick="
+        calc('9');
+        ">9</button>
+        <button class="calci" onclick="
+        calc('*');
+          ">*</button>
+        </p>
+
+        <p>
+          <button class="calcu" onclick="
+          calc('0');
+            ">0</button>
+          <button class="calcu" onclick="
+          calc('.');
+            ">.</button>
+        <button class="calcu" onclick="
+        calcevac();
+        ">=</button>
+          <button class="calci" onclick="
+          calc('/');
+          
+            ">/</button>
+          </p>
+    
+    <button class="calcui"onclick="
+    
+    clearCalc();
+    ">Clear</button>
+
+
+
+
+    
+  </body>
+  
+  <script>
+    let calculation='';
+    
+    function calc(value){
+      calculation += value;
+      document.querySelector('.calc').innerHTML = calculation;
+
+
+    }
+    function calcevac(){
+      calculation=eval(calculation);
+      document.querySelector('.calc').innerHTML = calculation;
+    }
+    function clearCalc(){
+      calculation='';
+      document.querySelector('.calc').innerHTML = calculation;
+    }
+
+    </script>
+</html>
